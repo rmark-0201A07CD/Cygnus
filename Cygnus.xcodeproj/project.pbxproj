@@ -10,6 +10,16 @@
 		E7A1EB0B1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB081B979CC300427433 /* Info.plist */; };
 		E7A1EB0C1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB0A1B979CC300427433 /* Info.plist */; };
 		E7A1EB151B979CDB00427433 /* Cygnus-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A1EB141B979CDB00427433 /* Cygnus-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
+		E7A1EB201B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
+		E7A1EB221B979F7700427433 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB211B979F7700427433 /* CrossPlatform.swift */; };
+		E7A1EB231B979F7700427433 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB211B979F7700427433 /* CrossPlatform.swift */; };
+		E7A1EB251B97A24300427433 /* CXScrollNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB241B97A24300427433 /* CXScrollNode.swift */; };
+		E7A1EB261B97A24300427433 /* CXScrollNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB241B97A24300427433 /* CXScrollNode.swift */; };
+		E7A1EB271B97A28E00427433 /* CXGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */; };
+		E7A1EB281B97A28E00427433 /* CXGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */; };
+		E7A1EB291B97A51C00427433 /* CXScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1A1B979DDF00427433 /* CXScene.swift */; };
+		E7A1EB2A1B97A51C00427433 /* CXScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1A1B979DDF00427433 /* CXScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,11 @@
 		E7A1EB121B979CDB00427433 /* Cygnus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cygnus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A1EB141B979CDB00427433 /* Cygnus-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cygnus-OSX.h"; sourceTree = "<group>"; };
 		E7A1EB161B979CDB00427433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7A1EB1A1B979DDF00427433 /* CXScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXScene.swift; sourceTree = "<group>"; };
+		E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXGeometry.swift; sourceTree = "<group>"; };
+		E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXButtonNode.swift; sourceTree = "<group>"; };
+		E7A1EB211B979F7700427433 /* CrossPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
+		E7A1EB241B97A24300427433 /* CXScrollNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXScrollNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +75,11 @@
 		E7A1EAFD1B979C8500427433 /* Cygnus */ = {
 			isa = PBXGroup;
 			children = (
+				E7A1EB211B979F7700427433 /* CrossPlatform.swift */,
+				E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */,
+				E7A1EB1A1B979DDF00427433 /* CXScene.swift */,
+				E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */,
+				E7A1EB241B97A24300427433 /* CXScrollNode.swift */,
 				E7A1EB061B979CC300427433 /* Supporting Files */,
 			);
 			path = Cygnus;
@@ -162,6 +182,7 @@
 		E7A1EAF21B979C8400427433 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Robbie Markwick";
 				TargetAttributes = {
@@ -215,6 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A1EB221B979F7700427433 /* CrossPlatform.swift in Sources */,
+				E7A1EB251B97A24300427433 /* CXScrollNode.swift in Sources */,
+				E7A1EB271B97A28E00427433 /* CXGeometry.swift in Sources */,
+				E7A1EB291B97A51C00427433 /* CXScene.swift in Sources */,
+				E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A1EB201B979E1B00427433 /* CXButtonNode.swift in Sources */,
+				E7A1EB261B97A24300427433 /* CXScrollNode.swift in Sources */,
+				E7A1EB281B97A28E00427433 /* CXGeometry.swift in Sources */,
+				E7A1EB2A1B97A51C00427433 /* CXScene.swift in Sources */,
+				E7A1EB231B979F7700427433 /* CrossPlatform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +351,7 @@
 		E7A1EB041B979C8500427433 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -330,12 +362,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markwick.Cygnus;
 				PRODUCT_NAME = Cygnus;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E7A1EB051B979C8500427433 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -352,6 +386,7 @@
 		E7A1EB181B979CDB00427433 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -366,12 +401,14 @@
 				PRODUCT_NAME = Cygnus;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E7A1EB191B979CDB00427433 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
