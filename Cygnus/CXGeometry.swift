@@ -1,6 +1,6 @@
 //
-//  Sprites.swift
-//  SpaceCrush
+//  CXGeometry.swift
+//  Cygnus
 //
 //  Created by Robbie Markwick on 7/31/15.
 //  Copyright © 2015 Robbie Markwick. All rights reserved.
