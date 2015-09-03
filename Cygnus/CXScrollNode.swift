@@ -32,7 +32,7 @@ public class CXScrollNode: SKNode {
 	
 /// Scroll Bounds
 	var mask:SKCropNode = SKCropNode()
-	var contentSize = CGSize() {
+	public var contentSize = CGSize() {
 		didSet {
 			content.constraints = [
 				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width-contentSize.width,0), upperLimit: 0)),
@@ -72,7 +72,58 @@ public class CXScrollNode: SKNode {
 		touchesEnded(touches ?? [], withEvent: event)
 	}
 	#elseif os(OSX)
-	
+	override public func mouseDown(theEvent: NSEvent) {
+		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+			node.mouseDown(theEvent)
+		}
+		startScrollPoint = theEvent.locationInNode(self)
+		startScrollPosition = content.position
+	}
+	private func moveScroll(theEvent:NSEvent){
+		let newPoint = theEvent.locationInNode(self)
+		guard let oldPoint = startScrollPoint, startPosition = startScrollPosition else { return }
+		content.position = startPosition + newPoint - oldPoint
+	}
+	override public func mouseDragged(theEvent: NSEvent) {
+		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+			node.mouseDragged(theEvent)
+		}
+		moveScroll(theEvent)
+	}
+	override public func mouseUp(theEvent: NSEvent) {
+		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+			node.mouseUp(theEvent)
+		}
+		startScrollPosition = nil
+		startScrollPoint = nil
+	}
 	#endif
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

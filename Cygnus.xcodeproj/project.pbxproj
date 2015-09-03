@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E7A1EB0B1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB081B979CC300427433 /* Info.plist */; };
 		E7A1EB0C1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB0A1B979CC300427433 /* Info.plist */; };
-		E7A1EB151B979CDB00427433 /* Cygnus-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A1EB141B979CDB00427433 /* Cygnus-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
 		E7A1EB201B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
 		E7A1EB221B979F7700427433 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB211B979F7700427433 /* CrossPlatform.swift */; };
@@ -20,6 +19,12 @@
 		E7A1EB281B97A28E00427433 /* CXGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */; };
 		E7A1EB291B97A51C00427433 /* CXScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1A1B979DDF00427433 /* CXScene.swift */; };
 		E7A1EB2A1B97A51C00427433 /* CXScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1A1B979DDF00427433 /* CXScene.swift */; };
+		E7A1EB461B97B1F400427433 /* CXAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB451B97B1F400427433 /* CXAppDelegate.swift */; };
+		E7A1EB4B1B97B4A900427433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB4A1B97B4A900427433 /* Main.storyboard */; };
+		E7A1EB4D1B97B4D600427433 /* CXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB4C1B97B4D600427433 /* CXViewController.swift */; };
+		E7A1EB661B97D0A400427433 /* CXAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB651B97D0A400427433 /* CXAppDelegate.swift */; };
+		E7A1EB681B97D25B00427433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB671B97D25B00427433 /* Main.storyboard */; };
+		E7A1EB6A1B97D29D00427433 /* CXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB691B97D29D00427433 /* CXViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +32,17 @@
 		E7A1EB081B979CC300427433 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7A1EB0A1B979CC300427433 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7A1EB121B979CDB00427433 /* Cygnus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cygnus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7A1EB141B979CDB00427433 /* Cygnus-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cygnus-OSX.h"; sourceTree = "<group>"; };
-		E7A1EB161B979CDB00427433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7A1EB1A1B979DDF00427433 /* CXScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXScene.swift; sourceTree = "<group>"; };
 		E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXGeometry.swift; sourceTree = "<group>"; };
 		E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXButtonNode.swift; sourceTree = "<group>"; };
 		E7A1EB211B979F7700427433 /* CrossPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
 		E7A1EB241B97A24300427433 /* CXScrollNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXScrollNode.swift; sourceTree = "<group>"; };
+		E7A1EB451B97B1F400427433 /* CXAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXAppDelegate.swift; path = iOS/CXAppDelegate.swift; sourceTree = "<group>"; };
+		E7A1EB4A1B97B4A900427433 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = iOS/Main.storyboard; sourceTree = "<group>"; };
+		E7A1EB4C1B97B4D600427433 /* CXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXViewController.swift; path = iOS/CXViewController.swift; sourceTree = "<group>"; };
+		E7A1EB651B97D0A400427433 /* CXAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXAppDelegate.swift; path = OSX/CXAppDelegate.swift; sourceTree = "<group>"; };
+		E7A1EB671B97D25B00427433 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = OSX/Main.storyboard; sourceTree = "<group>"; };
+		E7A1EB691B97D29D00427433 /* CXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				E7A1EAFD1B979C8500427433 /* Cygnus */,
-				E7A1EB131B979CDB00427433 /* Cygnus-OSX */,
 				E7A1EAFC1B979C8500427433 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,10 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				E7A1EB211B979F7700427433 /* CrossPlatform.swift */,
-				E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */,
-				E7A1EB1A1B979DDF00427433 /* CXScene.swift */,
-				E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */,
-				E7A1EB241B97A24300427433 /* CXScrollNode.swift */,
+				E7A1EB421B97B1C000427433 /* Setup */,
+				E7A1EB401B97AFCF00427433 /* SpriteKit Extensions */,
 				E7A1EB061B979CC300427433 /* Supporting Files */,
 			);
 			path = Cygnus;
@@ -110,13 +116,44 @@
 			path = OSX;
 			sourceTree = "<group>";
 		};
-		E7A1EB131B979CDB00427433 /* Cygnus-OSX */ = {
+		E7A1EB401B97AFCF00427433 /* SpriteKit Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E7A1EB141B979CDB00427433 /* Cygnus-OSX.h */,
-				E7A1EB161B979CDB00427433 /* Info.plist */,
+				E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */,
+				E7A1EB1A1B979DDF00427433 /* CXScene.swift */,
+				E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */,
+				E7A1EB241B97A24300427433 /* CXScrollNode.swift */,
 			);
-			path = "Cygnus-OSX";
+			name = "SpriteKit Extensions";
+			sourceTree = "<group>";
+		};
+		E7A1EB421B97B1C000427433 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				E7A1EB431B97B1D300427433 /* iOS */,
+				E7A1EB441B97B1D800427433 /* OSX */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		E7A1EB431B97B1D300427433 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E7A1EB451B97B1F400427433 /* CXAppDelegate.swift */,
+				E7A1EB4C1B97B4D600427433 /* CXViewController.swift */,
+				E7A1EB4A1B97B4A900427433 /* Main.storyboard */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E7A1EB441B97B1D800427433 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				E7A1EB651B97D0A400427433 /* CXAppDelegate.swift */,
+				E7A1EB691B97D29D00427433 /* CXViewController.swift */,
+				E7A1EB671B97D25B00427433 /* Main.storyboard */,
+			);
+			name = OSX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +170,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7A1EB151B979CDB00427433 /* Cygnus-OSX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +236,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E7A1EAF11B979C8400427433;
 			productRefGroup = E7A1EAFC1B979C8500427433 /* Products */;
@@ -217,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A1EB4B1B97B4A900427433 /* Main.storyboard in Resources */,
 				E7A1EB0C1B979CC300427433 /* Info.plist in Resources */,
 				E7A1EB0B1B979CC300427433 /* Info.plist in Resources */,
 			);
@@ -226,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A1EB681B97D25B00427433 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +276,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A1EB221B979F7700427433 /* CrossPlatform.swift in Sources */,
+				E7A1EB4D1B97B4D600427433 /* CXViewController.swift in Sources */,
 				E7A1EB251B97A24300427433 /* CXScrollNode.swift in Sources */,
 				E7A1EB271B97A28E00427433 /* CXGeometry.swift in Sources */,
 				E7A1EB291B97A51C00427433 /* CXScene.swift in Sources */,
 				E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */,
+				E7A1EB461B97B1F400427433 /* CXAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A1EB201B979E1B00427433 /* CXButtonNode.swift in Sources */,
+				E7A1EB6A1B97D29D00427433 /* CXViewController.swift in Sources */,
 				E7A1EB261B97A24300427433 /* CXScrollNode.swift in Sources */,
 				E7A1EB281B97A28E00427433 /* CXGeometry.swift in Sources */,
 				E7A1EB2A1B97A51C00427433 /* CXScene.swift in Sources */,
 				E7A1EB231B979F7700427433 /* CrossPlatform.swift in Sources */,
+				E7A1EB661B97D0A400427433 /* CXAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +401,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Cygnus/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markwick.Cygnus;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-iOS";
 				PRODUCT_NAME = Cygnus;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -376,8 +420,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Cygnus/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markwick.Cygnus;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-iOS";
 				PRODUCT_NAME = Cygnus;
 				SKIP_INSTALL = YES;
 			};
@@ -393,10 +438,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Cygnus-OSX/Info.plist";
+				INFOPLIST_FILE = Cygnus/OSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-OSX";
 				PRODUCT_NAME = Cygnus;
 				SDKROOT = macosx;
@@ -415,10 +460,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Cygnus-OSX/Info.plist";
+				INFOPLIST_FILE = Cygnus/OSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-OSX";
 				PRODUCT_NAME = Cygnus;
 				SDKROOT = macosx;

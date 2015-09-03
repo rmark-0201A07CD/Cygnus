@@ -26,13 +26,22 @@ public class CXButtonNode:SKSpriteNode {
 		action?(self)
 	}
 	#elseif os(OSX)
-	
+	override public func mouseDown(theEvent: NSEvent) {
+		isPressed = true
+	}
+	public override func mouseUp(theEvent: NSEvent) {
+		theEvent
+		guard isPressed, let parent = parent where containsPoint(theEvent.locationInNode(parent)) else { return }
+		isPressed = false
+		action?(self)
+	}
 	#endif
+	
 
 /// Button Label
 	
 	public class func buttonWithLabel(text:String)->CXButtonNode {
-		let button = CXButtonNode(color: almostClearColor, size: CGSize(width: 100, height: 40))
+		let button = CXButtonNode(color: almostClearColor, size: CGSize(width: 100, height: 50))
 		button.text = text
 		return button
 	}
@@ -61,7 +70,7 @@ public class CXButtonNode:SKSpriteNode {
 	private func setupLabel(){
 		guard label == nil else { return }
 		let newLabel = SKLabelNode(text:text)
-		newLabel.fontSize = 17
+		newLabel.fontSize = 22
 		newLabel.verticalAlignmentMode = .Center
 		label = newLabel
 		addChild(newLabel)

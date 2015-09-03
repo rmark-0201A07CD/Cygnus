@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7A1EAFA1B979C8500427433"
-               BuildableName = "Cygnus-iOS.framework"
+               BuildableName = "Cygnus.framework"
                BlueprintName = "Cygnus-iOS"
                ReferencedContainer = "container:Cygnus.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7A1EAFA1B979C8500427433"
-            BuildableName = "Cygnus-iOS.framework"
+            BuildableName = "Cygnus.framework"
             BlueprintName = "Cygnus-iOS"
             ReferencedContainer = "container:Cygnus.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E7A1EAFA1B979C8500427433"
-            BuildableName = "Cygnus-iOS.framework"
+            BuildableName = "Cygnus.framework"
             BlueprintName = "Cygnus-iOS"
             ReferencedContainer = "container:Cygnus.xcodeproj">
          </BuildableReference>
