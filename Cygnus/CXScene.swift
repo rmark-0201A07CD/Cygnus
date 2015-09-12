@@ -9,7 +9,7 @@
 import SpriteKit
 
 public class CXScene:SKScene{
-	public var presentingScene:CXScene?
+	final public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
 	
 	override required public init(size:CGSize){
@@ -24,20 +24,20 @@ public class CXScene:SKScene{
 	    fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
+	final public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		scene.presentingScene = self
 		view?.presentScene(scene, transition:transition)
 		scene.didAppear()
 		didDisappear()
 	}
-	public func dismissScene(transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
+	final public func dismissScene(transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		guard let scene = presentingScene else { return }
 		view?.presentScene(scene, transition:transition)
 		scene.didAppear()
 		didDisappear()
 	}
 	
-	public func displayInterstialAd(){
+	final public func displayInterstialAd(){
 		#if os(iOS)
 			viewController?.showInterstialAd()
 		#endif

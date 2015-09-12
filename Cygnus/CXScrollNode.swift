@@ -14,7 +14,7 @@ Do not add children to the scroll Node. Instead add Children to its Content Node
 
 public class CXScrollNode: SKNode {
 	
-	public var content:SKNode = SKNode()
+	final public internal(set) var content:SKNode = SKNode()
 	private let background:SKSpriteNode
 	
 	public init(size:CGSize) {
@@ -32,7 +32,7 @@ public class CXScrollNode: SKNode {
 	
 /// Scroll Bounds
 	var mask:SKCropNode = SKCropNode()
-	public var contentSize = CGSize() {
+	final public var contentSize = CGSize() {
 		didSet {
 			content.constraints = [
 				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width-contentSize.width,0), upperLimit: 0)),
