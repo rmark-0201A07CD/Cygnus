@@ -22,6 +22,7 @@ class CXViewController: NSViewController {
 		scene.scaleMode = .AspectFill
 		scene.viewController = self
 		skView?.presentScene(scene)
+		scene.didAppear()
         // Do view setup here.
     }
     

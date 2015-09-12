@@ -9,12 +9,16 @@
 import SpriteKit
 
 public class CXScene:SKScene{
-	public var presentingScene:SKScene?
+	public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
-
+	
 	override required public init(size:CGSize){
 		super.init(size: size)
 	}
+	
+	public func didAppear(){}
+	public func didDisappear(){}
+	final public var visible:Bool { return view != nil }
 	
 	public required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
@@ -23,10 +27,14 @@ public class CXScene:SKScene{
 	public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		scene.presentingScene = self
 		view?.presentScene(scene, transition:transition)
+		scene.didAppear()
+		didDisappear()
 	}
 	public func dismissScene(transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		guard let scene = presentingScene else { return }
 		view?.presentScene(scene, transition:transition)
+		scene.didAppear()
+		didDisappear()
 	}
 	
 	public func displayInterstialAd(){

@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E718CCBC1B9A15C200DEE3CF /* Cygnus */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E718CCBF1B9A15C200DEE3CF /* Build configuration list for PBXAggregateTarget "Cygnus" */;
+			buildPhases = (
+			);
+			dependencies = (
+				E718CCC11B9A15CB00DEE3CF /* PBXTargetDependency */,
+				E718CCC31B9A15CB00DEE3CF /* PBXTargetDependency */,
+			);
+			name = Cygnus;
+			productName = Cygnus;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E7A1EB0B1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB081B979CC300427433 /* Info.plist */; };
 		E7A1EB0C1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB0A1B979CC300427433 /* Info.plist */; };
@@ -26,6 +41,23 @@
 		E7A1EB681B97D25B00427433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB671B97D25B00427433 /* Main.storyboard */; };
 		E7A1EB6A1B97D29D00427433 /* CXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB691B97D29D00427433 /* CXViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E718CCC01B9A15CB00DEE3CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7A1EAF21B979C8400427433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7A1EAFA1B979C8500427433;
+			remoteInfo = "Cygnus-iOS";
+		};
+		E718CCC21B9A15CB00DEE3CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7A1EAF21B979C8400427433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7A1EB111B979CDB00427433;
+			remoteInfo = "Cygnus-OSX";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E7A1EAFB1B979C8500427433 /* Cygnus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cygnus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +254,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Robbie Markwick";
 				TargetAttributes = {
+					E718CCBC1B9A15C200DEE3CF = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					E7A1EAFA1B979C8500427433 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -245,6 +280,7 @@
 			targets = (
 				E7A1EAFA1B979C8500427433 /* Cygnus-iOS */,
 				E7A1EB111B979CDB00427433 /* Cygnus-OSX */,
+				E718CCBC1B9A15C200DEE3CF /* Cygnus */,
 			);
 		};
 /* End PBXProject section */
@@ -301,7 +337,34 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E718CCC11B9A15CB00DEE3CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7A1EAFA1B979C8500427433 /* Cygnus-iOS */;
+			targetProxy = E718CCC01B9A15CB00DEE3CF /* PBXContainerItemProxy */;
+		};
+		E718CCC31B9A15CB00DEE3CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7A1EB111B979CDB00427433 /* Cygnus-OSX */;
+			targetProxy = E718CCC21B9A15CB00DEE3CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E718CCBD1B9A15C200DEE3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E718CCBE1B9A15C200DEE3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		E7A1EB011B979C8500427433 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -425,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-iOS";
 				PRODUCT_NAME = Cygnus;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -468,12 +532,21 @@
 				PRODUCT_NAME = Cygnus;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E718CCBF1B9A15C200DEE3CF /* Build configuration list for PBXAggregateTarget "Cygnus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E718CCBD1B9A15C200DEE3CF /* Debug */,
+				E718CCBE1B9A15C200DEE3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E7A1EAF51B979C8400427433 /* Build configuration list for PBXProject "Cygnus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -490,6 +563,7 @@
 				E7A1EB051B979C8500427433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7A1EB171B979CDB00427433 /* Build configuration list for PBXNativeTarget "Cygnus-OSX" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +572,7 @@
 				E7A1EB191B979CDB00427433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

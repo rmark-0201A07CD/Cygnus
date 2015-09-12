@@ -11,7 +11,7 @@ import SpriteKit
 public class CXButtonNode:SKSpriteNode {
 
 /// Touch Detection
-	public var action:((CXButtonNode)->())? {
+	final public var action:((CXButtonNode)->())? {
 		didSet { userInteractionEnabled = action != nil }
 	}
 	
@@ -29,7 +29,7 @@ public class CXButtonNode:SKSpriteNode {
 	override public func mouseDown(theEvent: NSEvent) {
 		isPressed = true
 	}
-	public override func mouseUp(theEvent: NSEvent) {
+	override public func mouseUp(theEvent: NSEvent) {
 		theEvent
 		guard isPressed, let parent = parent where containsPoint(theEvent.locationInNode(parent)) else { return }
 		isPressed = false
