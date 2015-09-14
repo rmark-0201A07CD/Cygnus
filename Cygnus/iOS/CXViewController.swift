@@ -23,8 +23,9 @@ class CXViewController: UIViewController, ADBannerViewDelegate {
 		
 		let skView = view as? SKView
 		skView?.multipleTouchEnabled = false
-		guard let sceneClass = (UIApplication.sharedApplication().delegate as? CXAppDelegate)?.initialSceneClass else { fatalError("Initial Scene Class Not Set") }
-		let scene = sceneClass.init(size:view.bounds.size)
+
+		guard let scene = (UIApplication.sharedApplication().delegate as? CXAppDelegate)?.initialScene(view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
+		
 		scene.viewController = self
 		skView?.presentScene(scene)
 		scene.didAppear()

@@ -14,7 +14,7 @@ public class CXAppDelegate: UIResponder, UIApplicationDelegate {
 	
 /// OVERRIDE
 	public var shouldShowAds:Bool { return false }
-	public var initialSceneClass:CXScene.Type { return CXScene.self }
+	public func initialScene(size:CGSize)->CXScene { fatalError("CXAppDelegate Subclass Not Implemented") }
 
 	
 /// App Delegate

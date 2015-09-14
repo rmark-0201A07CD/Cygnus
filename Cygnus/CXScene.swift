@@ -12,17 +12,9 @@ public class CXScene:SKScene{
 	final public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
 	
-	override required public init(size:CGSize){
-		super.init(size: size)
-	}
-	
 	public func didAppear(){}
 	public func didDisappear(){}
 	final public var visible:Bool { return view != nil }
-	
-	public required init?(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
-	}
 	
 	final public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		scene.presentingScene = self

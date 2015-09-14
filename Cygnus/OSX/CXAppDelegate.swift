@@ -11,7 +11,8 @@ import Cocoa
 public class CXAppDelegate: NSObject, NSApplicationDelegate {
 	
 /// OVERRIDE
-	public var initialSceneClass:CXScene.Type { return CXScene.self }
+	public func initialScene(size:CGSize)->CXScene { fatalError("CXAppDelegate Subclass Not Implemented") }
+
 
 ///App Delegate
 	@IBOutlet public weak var window:NSWindow?

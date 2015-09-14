@@ -16,8 +16,7 @@ class CXViewController: NSViewController {
 	override func viewWillAppear() {
         super.viewWillAppear()
 		
-		guard let sceneClass = (NSApplication.sharedApplication().delegate as? CXAppDelegate)?.initialSceneClass else { fatalError("Initial Scene Class Not Set") }
-		let scene = sceneClass.init(size:view.bounds.size)
+		guard let scene = (NSApplication.sharedApplication().delegate as? CXAppDelegate)?.initialScene(view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
 
 		scene.scaleMode = .AspectFill
 		scene.viewController = self
