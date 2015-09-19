@@ -19,6 +19,7 @@ public class CXScrollNode: SKNode {
 	
 	public init(size:CGSize) {
 		background = SKSpriteNode(color: almostClearColor, size: size)
+		self.size = size
 		super.init()
 		addChild(background)
 		mask.maskNode = SKSpriteNode(color: CXColor.whiteColor(), size: size)
@@ -26,8 +27,13 @@ public class CXScrollNode: SKNode {
 		mask.addChild(content)
 		userInteractionEnabled = true
 	}
+	
 	required public init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override public func removeAllChildren() {
+		content.removeAllChildren()
 	}
 	
 /// Scroll Bounds
@@ -38,9 +44,21 @@ public class CXScrollNode: SKNode {
 				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width-contentSize.width,0), upperLimit: 0)),
 				SKConstraint.positionY(SKRange(lowerLimit: min(background.size.height-contentSize.height,0), upperLimit: 0))
 			]
+			background.size = size
+			(mask.maskNode as? SKSpriteNode)?.size = size
 		}
 	}
-
+	
+	final public var size:CGSize{
+		didSet {
+			background.size = size
+			(mask.maskNode as? SKSpriteNode)?.size = size
+			content.constraints = [
+				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width-contentSize.width,0), upperLimit: 0)),
+				SKConstraint.positionY(SKRange(lowerLimit: min(background.size.height-contentSize.height,0), upperLimit: 0))
+			]
+		}
+	}
 /// Scrolling
 	
 	private var startScrollPosition:CGPoint?

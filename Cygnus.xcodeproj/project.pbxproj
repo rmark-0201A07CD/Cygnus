@@ -117,7 +117,7 @@
 			children = (
 				E7A1EB211B979F7700427433 /* CrossPlatform.swift */,
 				E7A1EB421B97B1C000427433 /* Setup */,
-				E7A1EB401B97AFCF00427433 /* SpriteKit Extensions */,
+				E7A1EB401B97AFCF00427433 /* SpriteKit */,
 				E7A1EB061B979CC300427433 /* Supporting Files */,
 			);
 			path = Cygnus;
@@ -148,7 +148,7 @@
 			path = OSX;
 			sourceTree = "<group>";
 		};
-		E7A1EB401B97AFCF00427433 /* SpriteKit Extensions */ = {
+		E7A1EB401B97AFCF00427433 /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
 				E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */,
@@ -156,7 +156,7 @@
 				E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */,
 				E7A1EB241B97A24300427433 /* CXScrollNode.swift */,
 			);
-			name = "SpriteKit Extensions";
+			name = SpriteKit;
 			sourceTree = "<group>";
 		};
 		E7A1EB421B97B1C000427433 /* Setup */ = {
@@ -546,6 +546,7 @@
 				E718CCBE1B9A15C200DEE3CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7A1EAF51B979C8400427433 /* Build configuration list for PBXProject "Cygnus" */ = {
 			isa = XCConfigurationList;

@@ -18,6 +18,13 @@ class CXViewController: UIViewController, ADBannerViewDelegate {
 		return true
 	}
 	
+	override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+		guard let scene = (self.view as? SKView)?.scene else { return }
+		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC)*coordinator.transitionDuration()/2))
+		dispatch_after(time, dispatch_get_main_queue()){
+			scene.size = size
+		}
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
 		
