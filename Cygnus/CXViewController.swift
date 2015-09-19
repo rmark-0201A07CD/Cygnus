@@ -13,6 +13,10 @@ class CXViewController: NSViewController {
 
 	@IBOutlet var skView:SKView?
 	
+	override func viewWillTransitionToSize(newSize: NSSize) {
+		(self.view as? SKView)?.scene?.size = newSize
+	}
+	
 	override func viewWillAppear() {
         super.viewWillAppear()
 		
