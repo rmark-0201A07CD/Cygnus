@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				E7C191F31BB06E1B0024F789 /* PBXTargetDependency */,
 				E718CCC11B9A15CB00DEE3CF /* PBXTargetDependency */,
 				E718CCC31B9A15CB00DEE3CF /* PBXTargetDependency */,
 			);
@@ -22,8 +23,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E7A1EB0B1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB081B979CC300427433 /* Info.plist */; };
-		E7A1EB0C1B979CC300427433 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB0A1B979CC300427433 /* Info.plist */; };
 		E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
 		E7A1EB201B979E1B00427433 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
 		E7A1EB221B979F7700427433 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB211B979F7700427433 /* CrossPlatform.swift */; };
@@ -40,6 +39,17 @@
 		E7A1EB661B97D0A400427433 /* CXAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB651B97D0A400427433 /* CXAppDelegate.swift */; };
 		E7A1EB681B97D25B00427433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A1EB671B97D25B00427433 /* Main.storyboard */; };
 		E7A1EB6A1B97D29D00427433 /* CXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB691B97D29D00427433 /* CXViewController.swift */; };
+		E7C191F41BB06EB40024F789 /* CXGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */; };
+		E7C191F51BB06EB40024F789 /* CXScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1A1B979DDF00427433 /* CXScene.swift */; };
+		E7C191F61BB06EB40024F789 /* CXButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */; };
+		E7C191F71BB06EB40024F789 /* CXScrollNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB241B97A24300427433 /* CXScrollNode.swift */; };
+		E7C191F81BB06EB80024F789 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A1EB211B979F7700427433 /* CrossPlatform.swift */; };
+		E7C191FC1BB06FDA0024F789 /* CXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C191FB1BB06EDB0024F789 /* CXViewController.swift */; };
+		E7C191FD1BB06FDD0024F789 /* CXAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C191FA1BB06EDB0024F789 /* CXAppDelegate.swift */; };
+		E7C191FF1BB0713F0024F789 /* CXHighlightingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C191FE1BB0713F0024F789 /* CXHighlightingNode.swift */; };
+		E7C192001BB0713F0024F789 /* CXHighlightingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C191FE1BB0713F0024F789 /* CXHighlightingNode.swift */; };
+		E7C192011BB0713F0024F789 /* CXHighlightingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C191FE1BB0713F0024F789 /* CXHighlightingNode.swift */; };
+		E7C192031BB07BE90024F789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C192021BB07BE90024F789 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E7A1EB111B979CDB00427433;
 			remoteInfo = "Cygnus-OSX";
+		};
+		E7C191F21BB06E1B0024F789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7A1EAF21B979C8400427433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7C191E91BB06E120024F789;
+			remoteInfo = "Cygnus-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,6 +92,12 @@
 		E7A1EB651B97D0A400427433 /* CXAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXAppDelegate.swift; path = OSX/CXAppDelegate.swift; sourceTree = "<group>"; };
 		E7A1EB671B97D25B00427433 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = OSX/Main.storyboard; sourceTree = "<group>"; };
 		E7A1EB691B97D29D00427433 /* CXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXViewController.swift; sourceTree = "<group>"; };
+		E7C191EA1BB06E120024F789 /* Cygnus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cygnus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C191EE1BB06E120024F789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C191FA1BB06EDB0024F789 /* CXAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXAppDelegate.swift; path = tvOS/CXAppDelegate.swift; sourceTree = "<group>"; };
+		E7C191FB1BB06EDB0024F789 /* CXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CXViewController.swift; path = tvOS/CXViewController.swift; sourceTree = "<group>"; };
+		E7C191FE1BB0713F0024F789 /* CXHighlightingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXHighlightingNode.swift; sourceTree = "<group>"; };
+		E7C192021BB07BE90024F789 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = tvOS/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +109,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E7A1EB0E1B979CDB00427433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C191E61BB06E120024F789 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,6 +138,7 @@
 			children = (
 				E7A1EAFB1B979C8500427433 /* Cygnus.framework */,
 				E7A1EB121B979CDB00427433 /* Cygnus.framework */,
+				E7C191EA1BB06E120024F789 /* Cygnus.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +159,7 @@
 			children = (
 				E7A1EB071B979CC300427433 /* iOS */,
 				E7A1EB091B979CC300427433 /* OSX */,
+				E7C191EB1BB06E120024F789 /* tvOS */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +186,7 @@
 				E7A1EB1B1B979DDF00427433 /* CXGeometry.swift */,
 				E7A1EB1A1B979DDF00427433 /* CXScene.swift */,
 				E7A1EB1E1B979E1B00427433 /* CXButtonNode.swift */,
+				E7C191FE1BB0713F0024F789 /* CXHighlightingNode.swift */,
 				E7A1EB241B97A24300427433 /* CXScrollNode.swift */,
 			);
 			name = SpriteKit;
@@ -164,6 +197,7 @@
 			children = (
 				E7A1EB431B97B1D300427433 /* iOS */,
 				E7A1EB441B97B1D800427433 /* OSX */,
+				E7C191F91BB06EBE0024F789 /* tvOS */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -188,6 +222,25 @@
 			name = OSX;
 			sourceTree = "<group>";
 		};
+		E7C191EB1BB06E120024F789 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				E7C191EE1BB06E120024F789 /* Info.plist */,
+			);
+			name = tvOS;
+			path = Cygnus/tvOS;
+			sourceTree = SOURCE_ROOT;
+		};
+		E7C191F91BB06EBE0024F789 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				E7C191FA1BB06EDB0024F789 /* CXAppDelegate.swift */,
+				E7C191FB1BB06EDB0024F789 /* CXViewController.swift */,
+				E7C192021BB07BE90024F789 /* Main.storyboard */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -199,6 +252,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E7A1EB0F1B979CDB00427433 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C191E71BB06E120024F789 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,14 +304,32 @@
 			productReference = E7A1EB121B979CDB00427433 /* Cygnus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E7C191E91BB06E120024F789 /* Cygnus-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7C191F11BB06E120024F789 /* Build configuration list for PBXNativeTarget "Cygnus-tvOS" */;
+			buildPhases = (
+				E7C191E51BB06E120024F789 /* Sources */,
+				E7C191E61BB06E120024F789 /* Frameworks */,
+				E7C191E71BB06E120024F789 /* Headers */,
+				E7C191E81BB06E120024F789 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cygnus-tvOS";
+			productName = "Cygnus-tvOS";
+			productReference = E7C191EA1BB06E120024F789 /* Cygnus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E7A1EAF21B979C8400427433 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Robbie Markwick";
 				TargetAttributes = {
 					E718CCBC1B9A15C200DEE3CF = {
@@ -262,6 +340,10 @@
 					};
 					E7A1EB111B979CDB00427433 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					E7C191E91BB06E120024F789 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = UR2T3Z854C;
 					};
 				};
 			};
@@ -280,6 +362,7 @@
 			targets = (
 				E7A1EAFA1B979C8500427433 /* Cygnus-iOS */,
 				E7A1EB111B979CDB00427433 /* Cygnus-OSX */,
+				E7C191E91BB06E120024F789 /* Cygnus-tvOS */,
 				E718CCBC1B9A15C200DEE3CF /* Cygnus */,
 			);
 		};
@@ -291,8 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A1EB4B1B97B4A900427433 /* Main.storyboard in Resources */,
-				E7A1EB0C1B979CC300427433 /* Info.plist in Resources */,
-				E7A1EB0B1B979CC300427433 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +382,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A1EB681B97D25B00427433 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C191E81BB06E120024F789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C192031BB07BE90024F789 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +406,7 @@
 				E7A1EB271B97A28E00427433 /* CXGeometry.swift in Sources */,
 				E7A1EB291B97A51C00427433 /* CXScene.swift in Sources */,
 				E7A1EB1F1B979E1B00427433 /* CXButtonNode.swift in Sources */,
+				E7C191FF1BB0713F0024F789 /* CXHighlightingNode.swift in Sources */,
 				E7A1EB461B97B1F400427433 /* CXAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +421,23 @@
 				E7A1EB281B97A28E00427433 /* CXGeometry.swift in Sources */,
 				E7A1EB2A1B97A51C00427433 /* CXScene.swift in Sources */,
 				E7A1EB231B979F7700427433 /* CrossPlatform.swift in Sources */,
+				E7C192001BB0713F0024F789 /* CXHighlightingNode.swift in Sources */,
 				E7A1EB661B97D0A400427433 /* CXAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7C191E51BB06E120024F789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C191F41BB06EB40024F789 /* CXGeometry.swift in Sources */,
+				E7C191F81BB06EB80024F789 /* CrossPlatform.swift in Sources */,
+				E7C191F71BB06EB40024F789 /* CXScrollNode.swift in Sources */,
+				E7C191F61BB06EB40024F789 /* CXButtonNode.swift in Sources */,
+				E7C191F51BB06EB40024F789 /* CXScene.swift in Sources */,
+				E7C191FC1BB06FDA0024F789 /* CXViewController.swift in Sources */,
+				E7C192011BB0713F0024F789 /* CXHighlightingNode.swift in Sources */,
+				E7C191FD1BB06FDD0024F789 /* CXAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,19 +454,29 @@
 			target = E7A1EB111B979CDB00427433 /* Cygnus-OSX */;
 			targetProxy = E718CCC21B9A15CB00DEE3CF /* PBXContainerItemProxy */;
 		};
+		E7C191F31BB06E1B0024F789 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7C191E91BB06E120024F789 /* Cygnus-tvOS */;
+			targetProxy = E7C191F21BB06E1B0024F789 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E718CCBD1B9A15C200DEE3CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E718CCBE1B9A15C200DEE3CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -536,6 +652,46 @@
 			};
 			name = Release;
 		};
+		E7C191EF1BB06E120024F789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Cygnus/tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-tvOS";
+				PRODUCT_NAME = Cygnus;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		E7C191F01BB06E120024F789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Cygnus/tvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markwick.Cygnus-tvOS";
+				PRODUCT_NAME = Cygnus;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -574,6 +730,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E7C191F11BB06E120024F789 /* Build configuration list for PBXNativeTarget "Cygnus-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7C191EF1BB06E120024F789 /* Debug */,
+				E7C191F01BB06E120024F789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

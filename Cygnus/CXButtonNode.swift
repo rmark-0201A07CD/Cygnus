@@ -8,7 +8,8 @@
 
 import SpriteKit
 
-public class CXButtonNode:SKSpriteNode {
+
+public class CXButtonNode: CXHighlightingNode {
 
 /// Touch Detection
 	final public var action:((CXButtonNode)->())? {
@@ -35,6 +36,12 @@ public class CXButtonNode:SKSpriteNode {
 		isPressed = false
 		action?(self)
 	}
+	#elseif os(tvOS)
+	override public func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+		guard !(presses.filter{$0.type == .Select}).isEmpty && isHighlighted else { return }
+		action?(self)
+	}
+ 
 	#endif
 	
 

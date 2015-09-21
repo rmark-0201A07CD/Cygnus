@@ -13,6 +13,8 @@ import SpriteKit
 	public typealias CXColor = UIColor
 #elseif os(OSX)
 	public typealias CXColor = NSColor
+#elseif os(tvOS)
+	public typealias CXColor = UIColor
 #endif
 
 let almostClearColor = CXColor(white:0, alpha: 0.00001)

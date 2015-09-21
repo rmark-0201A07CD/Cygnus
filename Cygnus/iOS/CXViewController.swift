@@ -35,7 +35,6 @@ class CXViewController: UIViewController, ADBannerViewDelegate {
 		
 		scene.viewController = self
 		skView?.presentScene(scene)
-		scene.didAppear()
         // Set up Ads
 		adBanner?.hidden = !CXAppDelegate().shouldShowAds
     }

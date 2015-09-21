@@ -116,6 +116,14 @@ public class CXScrollNode: SKNode {
 		startScrollPoint = nil
 	}
 	#endif
+	public func makeChildNodeVisible(node:SKSpriteNode){
+		content.position.x = max (-(node.position.x - node.size.width), content.position.x)
+		content.position.x = min (-(node.position.x + node.size.width-size.width), content.position.x)
+		
+		content.position.y = max (-(node.position.y - node.size.height), content.position.y)
+		content.position.y = min (-(node.position.y + node.size.height-size.height), content.position.y)
+
+	}
 }
 
 

@@ -13,8 +13,6 @@ public class CXScene:SKScene{
 	final public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
 	
-	public func didAppear(){}
-	public func didDisappear(){}
 	final public var visible:Bool { return view != nil }
 	
 	private var didResize:Bool = false
@@ -54,15 +52,11 @@ public class CXScene:SKScene{
 	final public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		scene.presentingScene = self
 		view?.presentScene(scene, transition:transition)
-		scene.didAppear()
-		didDisappear()
 	}
 	final public func dismissScene(transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
 		guard let scene = presentingScene else { return }
 		if didResize { scene.size = size }
 		view?.presentScene(scene, transition:transition)
-		scene.didAppear()
-		didDisappear()
 	}
 	
 	final public func displayInterstialAd(){
@@ -70,7 +64,39 @@ public class CXScene:SKScene{
 			viewController?.showInterstialAd()
 		#endif
 	}
+	
+	#if os(tvOS)
+	public var swipeToHighlightEnabled:Bool = false
+	
+	public func swipedRight(){ }
+	public func swipedLeft(){ }
+	public func swipedUp(){ }
+	public func swipedDown(){ }
+	
+	#endif
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
