@@ -39,41 +39,50 @@ class CXViewController: UIViewController {
 		view.addGestureRecognizer(downSwipe)
 		
 	}
-	
-	func detectRightSwipe(){
+	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
 		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
+		guard scene.swipeToHighlightEnabled, let button = CXHighlightingNode.currentHighlightedNode as? CXButtonNode else {
+			scene.pressesEnded(presses, withEvent: event)
+			return
+		}
+		guard !(presses.filter{$0.type == .Select}).isEmpty else { return }
+		button.action?(button)
+	}
+	
+	func detectRightSwipe(sender:UIGestureRecognizer){
+		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
-			scene.swipedRight()
+			(scene as? CXSwipeResponder)?.swipedRight()
 			return
 		}
 		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.rightHighlight else { return }
 		new.highlight()
 		new.leftHighlight = old
 	}
-	func detectLeftSwipe(){
-		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectLeftSwipe(sender:UIGestureRecognizer){
+		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
-			scene.swipedLeft()
+			(scene as? CXSwipeResponder)?.swipedLeft()
 			return
 		}
 		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.leftHighlight else { return }
 		new.highlight()
 		new.rightHighlight = old
 	}
-	func detectUpSwipe(){
-		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectUpSwipe(sender:UIGestureRecognizer){
+		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
-			scene.swipedUp()
+			(scene as? CXSwipeResponder)?.swipedUp()
 			return
 		}
 		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.upHighlight else { return }
 		new.highlight()
 		new.downHighlight = old
 	}
-	func detectDownSwipe(){
-		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectDownSwipe(sender:UIGestureRecognizer){
+		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
-			scene.swipedDown()
+			(scene as? CXSwipeResponder)?.swipedDown()
 			return
 		}
 		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.downHighlight else { return }

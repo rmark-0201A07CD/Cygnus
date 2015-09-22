@@ -65,19 +65,18 @@ public class CXScene:SKScene{
 		#endif
 	}
 	
-	#if os(tvOS)
 	public var swipeToHighlightEnabled:Bool = false
 	
-	public func swipedRight(){ }
-	public func swipedLeft(){ }
-	public func swipedUp(){ }
-	public func swipedDown(){ }
-	
-	#endif
+
 }
 
-
-
+@available (tvOS 8.0,*)
+public protocol CXSwipeResponder {
+	func swipedLeft()
+	func swipedRight()
+	func swipedUp()
+	func swipedDown()
+}
 
 
 

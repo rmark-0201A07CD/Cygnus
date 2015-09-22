@@ -36,12 +36,6 @@ public class CXButtonNode: CXHighlightingNode {
 		isPressed = false
 		action?(self)
 	}
-	#elseif os(tvOS)
-	override public func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-		guard !(presses.filter{$0.type == .Select}).isEmpty && isHighlighted else { return }
-		action?(self)
-	}
- 
 	#endif
 	
 

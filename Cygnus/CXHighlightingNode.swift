@@ -10,12 +10,19 @@ import SpriteKit
 
 public class CXHighlightingNode: SKSpriteNode {
 
-	public func didBeginHighilighting() {}
-	public func didEndHighlighting() {}
+	public func didBeginHighilighting() {
+		texture = highlightTexture
+	}
+	public func didEndHighlighting() {
+		texture = normalTexture
+	}
 
 	public func highlight(){
 		CXHighlightingNode.currentHighlightedNode = self
 	}
+	
+	public var highlightTexture:SKTexture?
+	public var nomralTexture:SKTexture?
 	
 	public internal(set) var isHighlighted = false {
 		didSet {
