@@ -13,7 +13,7 @@ Do not add children to the scroll Node. Instead add Children to its Content Node
 */
 
 public class CXScrollNode: SKNode {
-	
+
 	final public internal(set) var content:SKNode = SKNode()
 	private let background:SKSpriteNode
 	
@@ -22,10 +22,10 @@ public class CXScrollNode: SKNode {
 		self.size = size
 		super.init()
 		addChild(background)
-		mask.maskNode = SKSpriteNode(color: CXColor.whiteColor(), size: size)
+		mask.maskNode = SKSpriteNode(color: CXColor.white(), size: size)
 		addChild(mask)
 		mask.addChild(content)
-		userInteractionEnabled = true
+		isUserInteractionEnabled = true
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
@@ -41,8 +41,8 @@ public class CXScrollNode: SKNode {
 	final public var contentSize = CGSize() {
 		didSet {
 			content.constraints = [
-				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width-contentSize.width,0), upperLimit: 0)),
-				SKConstraint.positionY(SKRange(lowerLimit: min(background.size.height-contentSize.height,0), upperLimit: 0))
+				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width/2-contentSize.width,0), upperLimit: 0)),
+				SKConstraint.positionY(SKRange(lowerLimit: min(background.size.height/2-contentSize.height,0), upperLimit: 0))
 			]
 			background.size = size
 			(mask.maskNode as? SKSpriteNode)?.size = size
@@ -65,58 +65,59 @@ public class CXScrollNode: SKNode {
 	private var startScrollPoint:CGPoint?
 	
 	#if os(iOS)
-	override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		for node in nodesAtPoint(touches.first?.locationInNode(self) ?? CGPoint()) {
-			node.touchesBegan(touches,withEvent:event)
+	override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for node in nodes(at: touches.first?.location(in: self) ?? CGPoint()) {
+			node.touchesBegan(touches,with:event)
 		}
-		startScrollPoint = touches.first?.locationInNode(self)
+		startScrollPoint = touches.first?.location(in: self)
 		startScrollPosition = content.position
 	}
-	override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		for node in nodesAtPoint(touches.first?.locationInNode(self) ?? CGPoint()) {
-			node.touchesMoved(touches,withEvent:event)
+	override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+		for node in nodes(at: touches.first?.location(in: self) ?? CGPoint()) {
+			node.touchesMoved(touches,with:event)
 		}
-		guard let newPoint = touches.first?.locationInNode(self), let oldPoint =  startScrollPoint, startPosition = startScrollPosition else { return }
+		guard let newPoint = touches.first?.location(in: self), let oldPoint =  startScrollPoint, startPosition = startScrollPosition else { return }
 		content.position = startPosition + newPoint - oldPoint
 	}
-	override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		for node in nodesAtPoint(touches.first?.locationInNode(self) ?? CGPoint()) {
-			node.touchesEnded(touches,withEvent:event)
+	override public func touchesEnded(_ touches: Set<UITouch>, with
+		event: UIEvent?) {
+		for node in nodes(at: touches.first?.location(in: self) ?? CGPoint()) {
+			node.touchesEnded(touches,with:event)
 		}
 		startScrollPosition = nil
 		startScrollPoint = nil
 	}
-	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-		touchesEnded(touches ?? [], withEvent: event)
+	override public func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
+		touchesEnded(touches ?? [], with: event)
 	}
 	#elseif os(OSX)
-	override public func mouseDown(theEvent: NSEvent) {
-		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+	override public func mouseDown(_ theEvent: NSEvent) {
+		for node in nodes(at: theEvent.location(in: self)) {
 			node.mouseDown(theEvent)
 		}
-		startScrollPoint = theEvent.locationInNode(self)
+		startScrollPoint = theEvent.location(in: self)
 		startScrollPosition = content.position
 	}
 	private func moveScroll(theEvent:NSEvent){
-		let newPoint = theEvent.locationInNode(self)
+		let newPoint = theEvent.location(in: self)
 		guard let oldPoint = startScrollPoint, startPosition = startScrollPosition else { return }
 		content.position = startPosition + newPoint - oldPoint
 	}
-	override public func mouseDragged(theEvent: NSEvent) {
-		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+	override public func mouseDragged(_ theEvent: NSEvent) {
+		for node in nodes(at: theEvent.location(in: self)) {
 			node.mouseDragged(theEvent)
 		}
-		moveScroll(theEvent)
+		moveScroll(theEvent: theEvent)
 	}
-	override public func mouseUp(theEvent: NSEvent) {
-		for node in nodesAtPoint(theEvent.locationInNode(self)) {
+	override public func mouseUp(_ theEvent: NSEvent) {
+		for node in nodes(at: theEvent.location(in: self)) {
 			node.mouseUp(theEvent)
 		}
 		startScrollPosition = nil
 		startScrollPoint = nil
 	}
 	#endif
-	public func makeChildNodeVisible(node:SKSpriteNode){
+	public func moveTo(node:SKSpriteNode){
 		content.position.x = max (-(node.position.x - node.size.width), content.position.x)
 		content.position.x = min (-(node.position.x + node.size.width-size.width), content.position.x)
 		

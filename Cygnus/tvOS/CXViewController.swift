@@ -16,41 +16,41 @@ class CXViewController: UIViewController {
 		
 		let skView = view as? SKView
 
-		guard let scene = (UIApplication.sharedApplication().delegate as? CXAppDelegate)?.initialScene(view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
+		guard let scene = (UIApplication.shared().delegate as? CXAppDelegate)?.initialScene(size: view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
 		
 		scene.viewController = self
 		skView?.presentScene(scene)
 		
 		//Set up Swipe Support
-		let rightSwipe = UISwipeGestureRecognizer(target: self, action:"detectRightSwipe:")
-		rightSwipe.direction = .Right
+		let rightSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CXViewController.detectRightSwipe(_:)))
+		rightSwipe.direction = .right
 		view.addGestureRecognizer(rightSwipe)
 		
-		let leftSwipe = UISwipeGestureRecognizer(target: self, action:"detectLeftSwipe:")
-		leftSwipe.direction = .Left
+		let leftSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CXViewController.detectLeftSwipe(_:)))
+		leftSwipe.direction = .left
 		view.addGestureRecognizer(leftSwipe)
 		
-		let upSwipe = UISwipeGestureRecognizer(target: self, action:"detectUpSwipe:")
-		upSwipe.direction = .Up
+		let upSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CXViewController.detectUpSwipe(_:)))
+		upSwipe.direction = .up
 		view.addGestureRecognizer(upSwipe)
 		
-		let downSwipe = UISwipeGestureRecognizer(target: self, action:"detectDownSwipe:")
-		downSwipe.direction = .Down
+		let downSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CXViewController.detectDownSwipe(_:)))
+		downSwipe.direction = .down
 		view.addGestureRecognizer(downSwipe)
 		
 	}
-	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+	override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
 		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled, let button = CXHighlightingNode.currentHighlightedNode as? CXButtonNode else {
-			scene.pressesEnded(presses, withEvent: event)
+			scene.pressesEnded(presses, with: event)
 			return
 		}
-		guard !(presses.filter{$0.type == .Select}).isEmpty else { return }
+		guard !(presses.filter{$0.type == .select}).isEmpty else { return }
 		button.action?(button)
 	}
 	
-	func detectRightSwipe(sender:UIGestureRecognizer){
-		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectRightSwipe(_ sender:UIGestureRecognizer){
+		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedRight()
 			return
@@ -59,8 +59,8 @@ class CXViewController: UIViewController {
 		new.highlight()
 		new.leftHighlight = old
 	}
-	func detectLeftSwipe(sender:UIGestureRecognizer){
-		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectLeftSwipe(_ sender:UIGestureRecognizer){
+		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedLeft()
 			return
@@ -69,8 +69,8 @@ class CXViewController: UIViewController {
 		new.highlight()
 		new.rightHighlight = old
 	}
-	func detectUpSwipe(sender:UIGestureRecognizer){
-		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectUpSwipe(_ sender:UIGestureRecognizer){
+		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedUp()
 			return
@@ -79,8 +79,8 @@ class CXViewController: UIViewController {
 		new.highlight()
 		new.downHighlight = old
 	}
-	func detectDownSwipe(sender:UIGestureRecognizer){
-		guard sender.state == .Ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
+	func detectDownSwipe(_ sender:UIGestureRecognizer){
+		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
 		guard scene.swipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedDown()
 			return

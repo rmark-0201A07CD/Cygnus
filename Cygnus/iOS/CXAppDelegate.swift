@@ -13,19 +13,14 @@ import iAd
 public class CXAppDelegate: UIResponder, UIApplicationDelegate {
 	
 /// OVERRIDE
-	public var shouldShowAds:Bool { return false }
 	public func initialScene(size:CGSize)->CXScene { fatalError("CXAppDelegate Subclass Not Implemented") }
 
 	
 /// App Delegate
 	public var window: UIWindow?
-	public func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		if shouldShowAds {
-			UIViewController.prepareInterstitialAds()
-		}
-
-		window = UIWindow(frame: UIScreen.mainScreen().bounds)
-		let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle(identifier: "com.markwick.Cygnus-iOS"))
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		window = UIWindow(frame: UIScreen.main().bounds)
+		let storyBoard = UIStoryboard(name: "Main", bundle: Bundle(identifier: "com.markwick.Cygnus-iOS"))
 		window?.rootViewController = storyBoard.instantiateInitialViewController()
 		window?.makeKeyAndVisible()
 		return true

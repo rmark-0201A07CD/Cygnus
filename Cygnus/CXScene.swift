@@ -13,10 +13,11 @@ public class CXScene:SKScene{
 	final public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
 	
-	final public var visible:Bool { return view != nil }
+	final public var isVisible:Bool { return view != nil }
 	
 	private var didResize:Bool = false
 	private var didFirstResize:Bool = false
+	
 	override public var size:CGSize {
 		didSet {
 			guard didFirstResize else { didFirstResize = true; return }
@@ -24,50 +25,70 @@ public class CXScene:SKScene{
 		}
 	}
 	
-	final public func showConfirmPurchaseLabel(product:SKProduct?, completion:(Bool)->()) {
-		let numberFormatter = NSNumberFormatter()
-		numberFormatter.numberStyle = .CurrencyStyle
+	public final func showAlert(title:String, message:String, completion:()->()){
+		#if os(iOS)
+			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+				completion()
+			}))
+			viewController?.present(alert, animated: true, completion: nil)
+		#elseif os(OSX)
+			let alert = NSAlert()
+			alert.messageText = title
+			alert.informativeText = message
+			_ = alert.addButton(withTitle: "OK")
+			if alert.runModal() == NSAlertFirstButtonReturn {
+				completion()
+			}
+		#elseif os(tvOS)
+			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+				completion()
+			}))
+			viewController?.present(alert, animated: true, completion: nil)
+		#endif
+	}
+	
+	final public func confirmPurchase(product:SKProduct?, completion:(Bool)->()) {
+		let numberFormatter = NumberFormatter()
+		numberFormatter.numberStyle = .currency
 		numberFormatter.locale = product?.priceLocale
-		let price = numberFormatter.stringFromNumber(product?.price ?? 0) ?? "$0.00"
+		let price = numberFormatter.string(from: product?.price ?? 0) ?? "$0.00"
 		let name = product?.localizedTitle ?? "Nothing"
 		#if os(iOS)
-			let askToBuy = UIAlertController(title: "Confirm Purchase", message: "Purchase \(name) for \(price)", preferredStyle: .Alert)
-			askToBuy.addAction(UIAlertAction(title: "NO", style: .Cancel) { alertAction in
+			print("Alert Requested")
+			print("view Controller: \(viewController?.description)")
+			let askToBuy = UIAlertController(title: "Confirm Purchase", message: "Purchase \(name) for \(price)", preferredStyle: .alert)
+			askToBuy.addAction(UIAlertAction(title: "NO", style: .cancel) { alertAction in
 				completion(false)
 			})
-			askToBuy.addAction(UIAlertAction(title: "YES", style: .Default) { alertAction in
+			askToBuy.addAction(UIAlertAction(title: "YES", style: .default) { alertAction in
 				completion(true)
 			})
-			viewController?.presentViewController(askToBuy, animated: true, completion: nil)
+			viewController?.present(askToBuy, animated: true, completion: nil)
 		#elseif os(OSX)
 			let alert = NSAlert()
 			alert.messageText = "Confirm Purchase"
 			alert.informativeText = "Purchase \(name) for \(price)"
-			alert.addButtonWithTitle("YES")
-			alert.addButtonWithTitle("NO")
+			alert.addButton(withTitle: "YES")
+			alert.addButton(withTitle: "NO")
 			completion( alert.runModal() == NSAlertFirstButtonReturn )
 		#endif
 	}
 	
-	final public func presentScene(scene:CXScene, transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
+	final public func present(_ scene:CXScene, transition:SKTransition = SKTransition.crossFade(withDuration: 0.5)){
 		scene.presentingScene = self
+		scene.viewController = viewController
 		view?.presentScene(scene, transition:transition)
 	}
-	final public func dismissScene(transition:SKTransition = SKTransition.crossFadeWithDuration(0.5)){
+	final public func dismiss(transition:SKTransition = SKTransition.crossFade(withDuration: 0.5)){
 		guard let scene = presentingScene else { return }
 		if didResize { scene.size = size }
 		view?.presentScene(scene, transition:transition)
 	}
 	
-	final public func displayInterstialAd(){
-		#if os(iOS)
-			viewController?.showInterstialAd()
-		#endif
-	}
+	public var isSwipeToHighlightEnabled:Bool = false
 	
-	public var swipeToHighlightEnabled:Bool = false
-	
-
 }
 
 @available (tvOS 8.0,*)

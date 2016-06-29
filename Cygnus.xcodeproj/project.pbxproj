@@ -13,7 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
-				E7C191F31BB06E1B0024F789 /* PBXTargetDependency */,
+				E7B95D1E1C04FD3D001F2A23 /* PBXTargetDependency */,
 				E718CCC11B9A15CB00DEE3CF /* PBXTargetDependency */,
 				E718CCC31B9A15CB00DEE3CF /* PBXTargetDependency */,
 			);
@@ -67,7 +67,7 @@
 			remoteGlobalIDString = E7A1EB111B979CDB00427433;
 			remoteInfo = "Cygnus-OSX";
 		};
-		E7C191F21BB06E1B0024F789 /* PBXContainerItemProxy */ = {
+		E7B95D1D1C04FD3D001F2A23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7A1EAF21B979C8400427433 /* Project object */;
 			proxyType = 1;
@@ -329,7 +329,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Robbie Markwick";
 				TargetAttributes = {
 					E718CCBC1B9A15C200DEE3CF = {
@@ -337,9 +337,14 @@
 					};
 					E7A1EAFA1B979C8500427433 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UR2T3Z854C;
+						DevelopmentTeamName = "Robbie Markwick";
 					};
 					E7A1EB111B979CDB00427433 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UR2T3Z854C;
+						DevelopmentTeamName = "Robbie Markwick";
+						ProvisioningStyle = Automatic;
 					};
 					E7C191E91BB06E120024F789 = {
 						CreatedOnToolsVersion = 7.1;
@@ -454,10 +459,10 @@
 			target = E7A1EB111B979CDB00427433 /* Cygnus-OSX */;
 			targetProxy = E718CCC21B9A15CB00DEE3CF /* PBXContainerItemProxy */;
 		};
-		E7C191F31BB06E1B0024F789 /* PBXTargetDependency */ = {
+		E7B95D1E1C04FD3D001F2A23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E7C191E91BB06E120024F789 /* Cygnus-tvOS */;
-			targetProxy = E7C191F21BB06E1B0024F789 /* PBXContainerItemProxy */;
+			targetProxy = E7B95D1D1C04FD3D001F2A23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -612,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -634,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -687,6 +694,7 @@
 				PRODUCT_NAME = Cygnus;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -738,6 +746,7 @@
 				E7C191F01BB06E120024F789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,14 +11,19 @@ import SpriteKit
 public class CXHighlightingNode: SKSpriteNode {
 
 	public func didBeginHighilighting() {
+		#if os(tvOS)
 		texture = highlightTexture
+		#endif
 	}
 	public func didEndHighlighting() {
+		#if os(tvOS)
 		texture = normalTexture
+		#endif
 	}
 
 	public func highlight(){
-		CXHighlightingNode.currentHighlightedNode = self
+		CXHighlightingNode.currentlyHighlightedNode = self
+		isHighlighted = true
 	}
 	
 	public var highlightTexture:SKTexture?
@@ -28,16 +33,16 @@ public class CXHighlightingNode: SKSpriteNode {
 		didSet {
 			if isHighlighted {
 				didBeginHighilighting()
-				(parent?.parent as? CXScrollNode)?.makeChildNodeVisible(self)
+				(parent?.parent as? CXScrollNode)?.makeChildNodeVisible(node: self)
 			} else {
 				didEndHighlighting()
 			}
 		}
 	}
 
-	public static var currentHighlightedNode:CXHighlightingNode? {
-		willSet { currentHighlightedNode?.isHighlighted = false }
-		didSet { currentHighlightedNode?.isHighlighted = true }
+	public static var currentlyHighlightedNode:CXHighlightingNode? {
+		willSet { currentlyHighlightedNode?.isHighlighted = false }
+		didSet { currentlyHighlightedNode?.isHighlighted = true }
 	}
 	
 	final public weak var leftHighlight:CXHighlightingNode?

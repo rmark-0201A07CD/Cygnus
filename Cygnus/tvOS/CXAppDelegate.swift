@@ -17,9 +17,9 @@ public class CXAppDelegate: UIResponder, UIApplicationDelegate {
 	
 /// App Delegate
 	public var window: UIWindow?
-	public func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		window = UIWindow(frame: UIScreen.mainScreen().bounds)
-		let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle(identifier: "com.markwick.Cygnus-tvOS"))
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		window = UIWindow(frame: UIScreen.main().bounds)
+		let storyBoard = UIStoryboard(name: "Main", bundle: Bundle(identifier: "com.markwick.Cygnus-tvOS"))
 		window?.rootViewController = storyBoard.instantiateInitialViewController()
 		window?.makeKeyAndVisible()
 		return true
