@@ -16,7 +16,7 @@ class CXViewController: UIViewController {
 		
 		let skView = view as? SKView
 
-		guard let scene = (UIApplication.shared().delegate as? CXAppDelegate)?.initialScene(size: view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
+		guard let scene = (UIApplication.shared.delegate as? CXAppDelegate)?.initialScene(size: view.bounds.size) else { fatalError("CXAppDelegate Subclass Not Implemented") }
 		
 		scene.viewController = self
 		skView?.presentScene(scene)
@@ -41,7 +41,7 @@ class CXViewController: UIViewController {
 	}
 	override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
 		guard let scene = (view as? SKView)?.scene as? CXScene else { return }
-		guard scene.swipeToHighlightEnabled, let button = CXHighlightingNode.currentHighlightedNode as? CXButtonNode else {
+		guard scene.isSwipeToHighlightEnabled, let button = CXHighlightingNode.currentlyHighlightedNode as? CXButtonNode else {
 			scene.pressesEnded(presses, with: event)
 			return
 		}
@@ -51,41 +51,41 @@ class CXViewController: UIViewController {
 	
 	func detectRightSwipe(_ sender:UIGestureRecognizer){
 		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
-		guard scene.swipeToHighlightEnabled else {
+		guard scene.isSwipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedRight()
 			return
 		}
-		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.rightHighlight else { return }
+		guard let old = CXHighlightingNode.currentlyHighlightedNode, let new = old.rightHighlight else { return }
 		new.highlight()
 		new.leftHighlight = old
 	}
 	func detectLeftSwipe(_ sender:UIGestureRecognizer){
 		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
-		guard scene.swipeToHighlightEnabled else {
+		guard scene.isSwipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedLeft()
 			return
 		}
-		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.leftHighlight else { return }
+		guard let old = CXHighlightingNode.currentlyHighlightedNode, let new = old.leftHighlight else { return }
 		new.highlight()
 		new.rightHighlight = old
 	}
 	func detectUpSwipe(_ sender:UIGestureRecognizer){
 		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
-		guard scene.swipeToHighlightEnabled else {
+		guard scene.isSwipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedUp()
 			return
 		}
-		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.upHighlight else { return }
+		guard let old = CXHighlightingNode.currentlyHighlightedNode, let new = old.upHighlight else { return }
 		new.highlight()
 		new.downHighlight = old
 	}
 	func detectDownSwipe(_ sender:UIGestureRecognizer){
 		guard sender.state == .ended, let scene = (view as? SKView)?.scene as? CXScene else { return }
-		guard scene.swipeToHighlightEnabled else {
+		guard scene.isSwipeToHighlightEnabled else {
 			(scene as? CXSwipeResponder)?.swipedDown()
 			return
 		}
-		guard let old = CXHighlightingNode.currentHighlightedNode, new = old.downHighlight else { return }
+		guard let old = CXHighlightingNode.currentlyHighlightedNode, let new = old.downHighlight else { return }
 		new.highlight()
 		new.upHighlight = old
 	}

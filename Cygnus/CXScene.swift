@@ -9,23 +9,23 @@
 import SpriteKit
 import StoreKit
 
-public class CXScene:SKScene{
+open class CXScene:SKScene{
 	final public var presentingScene:CXScene?
 	weak var viewController:CXViewController?
 	
 	final public var isVisible:Bool { return view != nil }
 	
-	private var didResize:Bool = false
-	private var didFirstResize:Bool = false
+	fileprivate var didResize:Bool = false
+	fileprivate var didFirstResize:Bool = false
 	
-	override public var size:CGSize {
+	override open var size:CGSize {
 		didSet {
 			guard didFirstResize else { didFirstResize = true; return }
 			didResize = true
 		}
 	}
 	
-	public final func showAlert(title:String, message:String, completion:()->()){
+	public final func showAlert(_ title:String, message:String, completion:@escaping ()->()){
 		#if os(iOS)
 			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -49,7 +49,7 @@ public class CXScene:SKScene{
 		#endif
 	}
 	
-	final public func confirmPurchase(product:SKProduct?, completion:(Bool)->()) {
+	final public func confirmPurchase(_ product:SKProduct?, completion:@escaping (Bool)->()) {
 		let numberFormatter = NumberFormatter()
 		numberFormatter.numberStyle = .currency
 		numberFormatter.locale = product?.priceLocale
@@ -81,13 +81,13 @@ public class CXScene:SKScene{
 		scene.viewController = viewController
 		view?.presentScene(scene, transition:transition)
 	}
-	final public func dismiss(transition:SKTransition = SKTransition.crossFade(withDuration: 0.5)){
+	final public func dismiss(_ transition:SKTransition = SKTransition.crossFade(withDuration: 0.5)){
 		guard let scene = presentingScene else { return }
 		if didResize { scene.size = size }
 		view?.presentScene(scene, transition:transition)
 	}
 	
-	public var isSwipeToHighlightEnabled:Bool = false
+	open var isSwipeToHighlightEnabled:Bool = false
 	
 }
 

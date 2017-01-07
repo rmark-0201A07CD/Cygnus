@@ -8,39 +8,39 @@
 
 import SpriteKit
 
-public class CXHighlightingNode: SKSpriteNode {
+open class CXHighlightingNode: SKSpriteNode {
 
-	public func didBeginHighilighting() {
+	open func didBeginHighilighting() {
 		#if os(tvOS)
 		texture = highlightTexture
 		#endif
 	}
-	public func didEndHighlighting() {
+	open func didEndHighlighting() {
 		#if os(tvOS)
 		texture = normalTexture
 		#endif
 	}
 
-	public func highlight(){
+	open func highlight(){
 		CXHighlightingNode.currentlyHighlightedNode = self
 		isHighlighted = true
 	}
 	
-	public var highlightTexture:SKTexture?
-	public var nomralTexture:SKTexture?
+	open var highlightTexture:SKTexture?
+	open var nomralTexture:SKTexture?
 	
-	public internal(set) var isHighlighted = false {
+	open internal(set) var isHighlighted = false {
 		didSet {
 			if isHighlighted {
 				didBeginHighilighting()
-				(parent?.parent as? CXScrollNode)?.makeChildNodeVisible(node: self)
+				(parent?.parent as? CXScrollNode)?.scrollTo(self)
 			} else {
 				didEndHighlighting()
 			}
 		}
 	}
 
-	public static var currentlyHighlightedNode:CXHighlightingNode? {
+	open static var currentlyHighlightedNode:CXHighlightingNode? {
 		willSet { currentlyHighlightedNode?.isHighlighted = false }
 		didSet { currentlyHighlightedNode?.isHighlighted = true }
 	}
