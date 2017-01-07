@@ -17,8 +17,8 @@ open class CXAppDelegate: UIResponder, UIApplicationDelegate {
 
 	
 /// App Delegate
-	open var window: UIWindow?
-	open func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+	public var window: UIWindow?
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		window = UIWindow(frame: UIScreen.main.bounds)
 		let storyBoard = UIStoryboard(name: "Main", bundle: Bundle(identifier: "com.markwick.Cygnus-iOS"))
 		window?.rootViewController = storyBoard.instantiateInitialViewController()

@@ -14,8 +14,8 @@ Do not add children to the scroll Node. Instead add Children to its Content Node
 
 open class CXScrollNode: SKNode {
 
-	final public internal(set) var content:SKNode = SKNode()
-	fileprivate let background:SKSpriteNode
+	public internal(set) var content:SKNode = SKNode()
+	private let background:SKSpriteNode
 	
 	public init(size:CGSize) {
 		background = SKSpriteNode(color: almostClearColor, size: size)
@@ -38,7 +38,7 @@ open class CXScrollNode: SKNode {
 	
 /// Scroll Bounds
 	var mask:SKCropNode = SKCropNode()
-	final public var contentSize = CGSize() {
+	public var contentSize = CGSize() {
 		didSet {
 			content.constraints = [
 				SKConstraint.positionX(SKRange(lowerLimit: min(background.size.width/2-contentSize.width,0), upperLimit: 0)),
@@ -49,7 +49,7 @@ open class CXScrollNode: SKNode {
 		}
 	}
 	
-	final public var size:CGSize{
+	public var size:CGSize{
 		didSet {
 			background.size = size
 			(mask.maskNode as? SKSpriteNode)?.size = size
@@ -61,8 +61,8 @@ open class CXScrollNode: SKNode {
 	}
 /// Scrolling
 	
-	fileprivate var startScrollPosition:CGPoint?
-	fileprivate var startScrollPoint:CGPoint?
+	private var startScrollPosition:CGPoint?
+	private var startScrollPoint:CGPoint?
 	
 	#if os(iOS)
 	override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -90,6 +90,7 @@ open class CXScrollNode: SKNode {
 	override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
 		touchesEnded(touches , with: event)
 	}
+	
 	#elseif os(OSX)
 	override open func mouseDown(with theEvent: NSEvent) {
 		for node in nodes(at: theEvent.location(in: self)) {

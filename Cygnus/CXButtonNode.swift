@@ -12,11 +12,11 @@ import SpriteKit
 open class CXButtonNode: CXHighlightingNode {
 
 /// Touch Detection
-	final public var action:((CXButtonNode)->())? {
+	public var action:((CXButtonNode)->())? {
 		didSet { isUserInteractionEnabled = action != nil }
 	}
 	
-	fileprivate var isPressed = false
+	private var isPressed = false
 	#if os(iOS)
 	override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		isPressed = true
@@ -46,34 +46,34 @@ open class CXButtonNode: CXHighlightingNode {
 		return button
 	}
 	
-	fileprivate var label:SKLabelNode?
+	private var label:SKLabelNode?
 	
-	open var text:String = "" {
+	public var text:String = "" {
 		didSet {
 			setupLabel()
 			label?.text = text
 		}
 	}
-	open var fontName:String? {
+	public var fontName:String? {
 		didSet {
 			setupLabel()
 			label?.fontName = fontName
 		}
 	}
-	open var fontColor:CXColor? {
+	public var fontColor:CXColor? {
 		didSet {
 			setupLabel()
 			label?.fontColor = fontColor
 		}
 	}
-	open var fontSize:CGFloat = 22.0 {
+	public var fontSize:CGFloat = 22.0 {
 		didSet {
 			setupLabel()
 			label?.fontSize = fontSize
 		}
 	}
 	
-	fileprivate func setupLabel(){
+	private func setupLabel(){
 		guard label == nil else { return }
 		let newLabel = SKLabelNode(text:text)
 		newLabel.fontSize = 22.0

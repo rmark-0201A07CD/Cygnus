@@ -21,13 +21,13 @@ open class CXHighlightingNode: SKSpriteNode {
 		#endif
 	}
 
-	open func highlight(){
+	public func highlight(){
 		CXHighlightingNode.currentlyHighlightedNode = self
 		isHighlighted = true
 	}
 	
-	open var highlightTexture:SKTexture?
-	open var nomralTexture:SKTexture?
+	public var highlightTexture:SKTexture?
+	public var nomralTexture:SKTexture?
 	
 	open internal(set) var isHighlighted = false {
 		didSet {
@@ -40,14 +40,14 @@ open class CXHighlightingNode: SKSpriteNode {
 		}
 	}
 
-	open static var currentlyHighlightedNode:CXHighlightingNode? {
+	public static var currentlyHighlightedNode:CXHighlightingNode? {
 		willSet { currentlyHighlightedNode?.isHighlighted = false }
 		didSet { currentlyHighlightedNode?.isHighlighted = true }
 	}
 	
-	final public weak var leftHighlight:CXHighlightingNode?
-	final public weak var rightHighlight:CXHighlightingNode?
-	final public weak var upHighlight:CXHighlightingNode?
-	final public weak var downHighlight:CXHighlightingNode?
+	public weak var leftHighlight:CXHighlightingNode?
+	public weak var rightHighlight:CXHighlightingNode?
+	public weak var upHighlight:CXHighlightingNode?
+	public weak var downHighlight:CXHighlightingNode?
 	
 }

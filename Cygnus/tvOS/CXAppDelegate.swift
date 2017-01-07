@@ -9,10 +9,10 @@
 
 import UIKit
 
-public class CXAppDelegate: UIResponder, UIApplicationDelegate {
+open class CXAppDelegate: UIResponder, UIApplicationDelegate {
 	
 /// OVERRIDE
-	public func initialScene(size:CGSize)->CXScene { fatalError("CXAppDelegate Subclass Not Implemented") }
+	open func initialScene(size:CGSize)->CXScene { fatalError("CXAppDelegate Subclass Not Implemented") }
 
 	
 /// App Delegate

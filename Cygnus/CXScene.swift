@@ -15,8 +15,8 @@ open class CXScene:SKScene{
 	
 	final public var isVisible:Bool { return view != nil }
 	
-	fileprivate var didResize:Bool = false
-	fileprivate var didFirstResize:Bool = false
+	private var didResize:Bool = false
+	private var didFirstResize:Bool = false
 	
 	override open var size:CGSize {
 		didSet {
